@@ -34,7 +34,7 @@ Python calls these lists, not arrays! As any sane language, indexing starts at 0
     ```python
     from copy import deepcopy
     
-    // supposedly pretty efficient
+    # supposedly pretty efficient
     newlist = deepcopy(oldlist)
     ```
  - `alist.split(".")`
@@ -56,15 +56,15 @@ alist = ["a", 2, "c"]
 
 for item in alist:
   print(item)
-  // a
-  // 2
-  // c
+  # a
+  # 2
+  # c
   
 for i in range(len(alist)):
   print(i,alist[i])
-  // (0, 'a')
-  // (1, 2)
-  // (2, 'c')
+  # (0, 'a')
+  # (1, 2)
+  # (2, 'c')
   
 // searching
 if "a" in alist:
@@ -77,16 +77,16 @@ Tuples are immutable.
 
 ```python
 coords = (0, 25, 50)
-x, y, z = coords // this is called unloading
-print(x) // 0
-print(y) // 25
-print(z) // 50
+x, y, z = coords # this is called unloading
+print(x) # 0
+print(y) # 25
+print(z) # 50
 
 x = -10
 y = 30
 z = 100
 
-// can reassign the new values to the tuple (just can't change inline)
+# can reassign the new values to the tuple (just can't change inline)
 coords = (x, y, z)
 ```
 
@@ -96,9 +96,43 @@ Can convert a tuple to a list:
 mytuple = ("Hello", "world")
 mylist = list(mytuple)
 print(mylist) 
-// ['Hello', 'world']
+# ['Hello', 'world']
+```
+
+**Dictionaries**
+
+Think maps.
+
+```python
+employee = {}
+employee{"name"} = "Brenna"
+employee{"age"} = 31
+print(employee) # looks like JSON
+# {'age': 31, 'name': 'Brenna'}
+
+employee2 = {"name": "Brenna", "age": 31}
+del employee2["age"]
+print(employee2)
+# {'name': 'Brenna'}
+```
+
+**Functions**
+
+- Unless you use the `global` keyword, variables created inside a function only exist while its active
+
+```python
+def whatsMyName(name):
+  print(name)
+  return "Ludacris"
+  
+name = whatsMyName("Brenna")
+# Brenna
+
+print(name)
+# Ludacris
 ```
 
 ## Cute Things
 
 - `import this`
+- `from __future__ import braces`
