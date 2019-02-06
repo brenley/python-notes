@@ -132,6 +132,43 @@ print(name)
 # Ludacris
 ```
 
+`pass` is a valid exit command
+```
+def doNothing():
+  pass
+  
+var huh = doNothing()
+print(huh)
+# none
+```
+
+You can also do some neat things with parameters, including calling them directly or setting defaults
+```
+def greet(firstname, job, hobby="do nothing")
+  return "greetings {0}, when not at your {1} job, you like to {2}".format(firstname, job, hobby)
+  
+greet("brenna", "engineer", "snowboard")
+# greeting brenna, when not at your engineer job, you like to snowboard
+greet(job="engineer", firstname="brenna, hobby="snowboard")
+# greeting brenna, when not at your engineer job, you like to snowboard
+greet("brenna", "engineer")
+# greeting brenna, when not at your engineer job, you like to do nothing
+
+def print_args(* args):
+  print("positional argument tuple", args)
+  pritn("the third argument", args[2])
+
+print_args(1, 3, 4)
+# positional argument tuple (3, 6, 4)
+# the third argument 4
+  
+def create_and_print_dict(** args):
+  print("here is the dictionary that was created - hope you didn't think you could pass IN a dictionary", args)
+  
+create_and_print_dict(name="brenna", age=31)
+# {'name': 'brenna', 'age': 31}
+```
+
 ## Cute Things
 
 - `import this`
