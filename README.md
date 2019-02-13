@@ -187,7 +187,7 @@ class Zombie:
   def __del__:
   
   # overloading for print functionality
-  def __str__:
+  def __str__(self):
     return """
     health: {0}
     """.format(self.health)
