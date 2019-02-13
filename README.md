@@ -169,6 +169,57 @@ create_and_print_dict(name="brenna", age=31)
 # {'name': 'brenna', 'age': 31}
 ```
 
+## Classes
+
+Usually you structure classes independently within a file (designed to be imported)
+
+```
+# convention to capitalize first letter of classes
+class Zombie:
+
+  # initialization / constructor
+  def __init__(self, hp, speed, ap):
+    self.health = hp
+    self.speed = speed
+    self.attackPower = ap
+    
+  # available for cleanup (e.g. database connection closing) when wipe out the object
+  def __del__:
+  
+  # overloading for print functionality
+  def __str__:
+    return """
+    health: {0}
+    """.format(self.health)
+  
+  # almost always want to have `self`
+  def gethurt(self):
+    self.health = self.health - 10
+    
+if __name__ == "__main__":
+  # only runs if you are directly running THIS file (ignored if importing)
+  brenna = Zombie(2,-20,12)
+  print(brenna.health)
+  brenna.gethurt
+  print(brenna.health)
+  # can create random attributes on indvidiual instances on the fly (generally don't do this)
+  brenna.image = "test.jpg"
+```
+
+Inherittance:
+
+```
+class Animal:
+  def __init__(self, legnum):
+    self.kingdom = "Anamalia"
+    self.legnum = legnum
+
+class Mammal(Animal):
+  def __init__(self, legnum):
+    Animal.__init__(self, legnum)
+    self.liveyoung = true
+```
+
 ## Cute Things
 
 - `import this`
