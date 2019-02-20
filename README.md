@@ -220,7 +220,58 @@ class Mammal(Animal):
     self.liveyoung = true
 ```
 
+## Modules
+
+Invoking:
+
+```
+if __name__ == "__main__":
+  pass
+  # only runs if module is run directly
+  # does not run if imported
+  # this is generally used to include tests
+```
+
+Importing:
+- will default to looking in local directory as well as official paths
+
+```
+import modulename
+item = modulename.SomeClass()
+
+# or
+
+from modulename import SomeClass
+# note that modulename is undefined
+item = SomeClass()
+
+# or
+
+from modulename import SomeClass as bob
+item = bob()
+```
+
+## Files
+
+```
+newfile = "C:\\Users\\phita84271\\Desktop\\test.txt"
+fh = open(newfile, "w")
+fh.write("this is a cool line\n")
+fh.close()
+
+nfh = open(newfile, "r")
+print(nfh.readline())
+nfh.close()
+
+# using "with" no longer requires you to call .close()
+with open(newfile, "r") as mfh:
+  for line in mfh:
+    print(line)
+```
+
 ## Cute Things
 
 - `import this`
 - `from __future__ import braces`
+- `import antigravity`
+- `import __hello__`
